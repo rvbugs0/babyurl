@@ -1,4 +1,4 @@
-# babyurl
+# Babyurl
 A simple link shortener application.
 
 
