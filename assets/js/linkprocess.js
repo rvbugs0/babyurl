@@ -10,7 +10,7 @@ function getXMLHttpRequest()
 }
 
 function containsHttp(str) {
-    if (str.indexOf("http://") >= 0) {
+    if (str.indexOf("http") >= 0) {
 return true;   
  } else {
       return false;
