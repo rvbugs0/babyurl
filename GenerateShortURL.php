@@ -47,7 +47,8 @@ return null;
 
 if(isset($_POST["longLink"]))
 {
-$longLink= $_POST["longLink"];
+$longUnformattedLink= $_POST["longLink"];
+$longLink=str_replace("ampersand","&",$longUnformattedLink);
 if(filter_var($longLink, FILTER_VALIDATE_URL)==FALSE)
 {
 print "{\"errorMessage\":\"Invalid url\",\"success\":false}";

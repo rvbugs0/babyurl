@@ -18,6 +18,17 @@ return true;
 }
 
 
+function escapeRegExp(string) {
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
+function replaceAll(string, find, replace) {
+  return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+
+
+
  function learnRegExp(s) {    
       var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
       return regexp.test(s);    
@@ -42,9 +53,10 @@ if(valid==false)
 longLink="http://"+longLink;
 }
 
+longLink=replaceAll(longLink,"&","ampersand");
 
 ax=getXMLHttpRequest();
-var qs="longLink="+longLink;
+var qs="longLink="+encodeURI(longLink);
         ax.open('POST','GenerateShortURL.php',true);
         ax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
         ax.send(qs);
