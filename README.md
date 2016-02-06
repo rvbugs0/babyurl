@@ -2,7 +2,7 @@
 A simple link shortener application.
 
 #Demo
-http://babyurl.hol.es
+http://babyurl-rvbugs0.rhcloud.com/
 
 #Requires
 1)php <br/>
